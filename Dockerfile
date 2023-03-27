@@ -3,7 +3,6 @@ FROM node:latest as npm_builder
 RUN rm -rf /src
 WORKDIR /src
 COPY . .
-RUN mv .env.example .env
 RUN npm install
 
 # PHP
@@ -13,6 +12,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # RUN docker-php-ext-install pdo_mysql
 WORKDIR /src
 COPY --from=npm_builder /src /src
+
+RUN mv .env.example .env
 
 RUN composer install
 RUN php artisan key:generate
