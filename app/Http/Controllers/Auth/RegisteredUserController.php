@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Notifications\NewUserNotification;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -28,21 +29,28 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-        $request->validate([
+        $attr = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'username' => 'nullable|unique:users',
+            'gender' => 'nullable',
+            'provinsi_id' => 'nullable',
+            'kotakab_id' => 'nullable',
+            'kecamatan_id' => 'nullable',
+            'kelurahan_id' => 'nullable',
+            'kodepos' => 'nullable',
+            'address' => 'nullable'
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $attr['password'] = Hash::make($attr['password']);
+        $user = User::create($attr);
 
         event(new Registered($user));
+
+        $user->notify(new NewUserNotification());
 
         Auth::login($user);
 

@@ -1,49 +1,36 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-    @include('includes.header')
-</head>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-<body>
-    {{-- OFFLINE STATE --}}
-    @livewire('offline')
-    {{-- LOADER --}}
-    <x-loader class="loader-p" />
-    <x-loading class="d-none" />
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <!-- Page Header Start-->
-        @include('includes.navbar')
-        <!-- Page Header Ends -->
-        <!-- Page Body Start-->
-        <div class="page-body-wrapper horizontal-menu">
-             <!-- Page Sidebar Start-->
-             <header class="main-nav">
-                <div class="sidebar-user text-center"><a class="setting-primary" href="javascript:void(0)"><i
-                            data-feather="settings"></i></a><img class="img-90 rounded-circle"
-                        src="{{ asset('assets/images/dashboard/1.png') }}" alt="">
-                    <div class="badge-bottom"></div><a href="#">
-                        <h6 class="mt-3 f-14 f-w-600">{{ auth()->user()->name }}</h6>
-                    </a>
-                    <p class="mb-0 font-roboto">{{ auth()->user()->role->name }}</p>
-                </div>
-                {{-- NAVIGATION SIDEBAR --}}
-                @include('includes.navigation')
-            </header>
-            <!-- Page Sidebar Ends-->
-            <div class="page-body">
-                <!-- Container-fluid starts-->
-                @yield('content')
-                <!-- Container-fluid Ends-->
-            </div>
-            <!-- footer start-->
-            @include('includes.footer')
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
         </div>
-    </div>
-    <!-- page-wrapper end-->
-    {{-- INCLUDE SCRIPTS --}}
-    @include('includes.scripts')
-</body>
-
+    </body>
 </html>
