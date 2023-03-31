@@ -1,0 +1,28 @@
+<?php
+/*=========================================================================================
+    App Name: Inventory Management System
+    File Name: {{ class }}
+    --------------------------------------------------------------------------------------
+    Author: R. Idham Aziz Marlin, S.Kom
+    Email: idhamaziz390@gmail.com
+==========================================================================================*/
+
+namespace {{ namespace }};
+
+use Illuminate\Auth\Access\HandlesAuthorization;
+use {{ namespacedUserModel }};
+
+class {{ class }}
+{
+    use HandlesAuthorization;
+
+    /**
+     * Create a new policy instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+}

@@ -1,0 +1,18 @@
+<?php
+/*=========================================================================================
+    App Name: Inventory Management System
+    File Name: {{ class }}
+    --------------------------------------------------------------------------------------
+    Author: R. Idham Aziz Marlin, S.Kom
+    Email: idhamaziz390@gmail.com
+==========================================================================================*/
+
+namespace {{ namespace }};
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class {{ class }} extends Model
+{
+    use HasFactory;
+}

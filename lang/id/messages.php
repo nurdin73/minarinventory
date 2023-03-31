@@ -1,0 +1,66 @@
+<?php
+/*=========================================================================================
+App Name: Monitoring Eksekusi PTUN Jakarta
+File Name: messages.php
+Description: Indonesian Language
+--------------------------------------------------------------------------------------
+Author: R. Idham Aziz Marlin, S.Kom
+==========================================================================================*/
+
+return [
+    'welcome_login' => 'Selamat Datang! Silahkan masukkan email atau nama pengguna dan kata sandi untuk masuk.',
+    'saving_state' => 'Menyimpan...',
+    'checking_state' => 'Memeriksa...',
+    'dont_have_account' => 'Belum mendaftar?',
+    'already_registered' => 'Sudah terdaftar?',
+    'data_exists' => 'Data sudah ada',
+    'registration_success' => 'Silahkan cek inbox email Anda untuk informasi lebih lanjut, jika tidak ada cek folder spam.',
+    'action_message' => ':action :message',
+    'save_success' => ':Action berhasil ditambahkan',
+    'save_failed' => 'Proses penyimpanan :action gagal!',
+    'update_success' => ':Action berhasil diperbaharui',
+    'update_no_change' => 'Tidak ada perubahan data!',
+    'update_failed' => 'Proses perbaharui :action gagal!',
+    'delete_success' => ':Name berhasil dihapus',
+    'delete_failed' => ':Action Gagal Terhapus',
+    'activation_success' => ':Name berhasil diaktivasi',
+    'activation_failed' => ':Name gagal diaktivasi!',
+    'user_x_active' => 'Akun Anda belum diaktivasi.',
+    'user_blocked' => 'Akun Anda telah diblokir! Hubungi Administrator untuk informasi lebih lanjut.',
+    'welcome' => 'Selamat Datang, :Name',
+    'forget_help' => 'Masukan email dan kami akan mengirim Anda tautan untuk kembali ke akun Anda',
+    'no_connection' => 'Tidak ada koneksi internet',
+    'empty_data' => 'Oops! Kita tidak menemukan data apapun. Silahkan klik tombol "Tambah" untuk menambah data.',
+    'empty_request' => 'Belum ada pihak yang perlu diaktivasi saat ini.',
+    'list_results' => 'Silahkan gunakan hasil tabel database dibawah ini untuk melakukan navigasi atau filter hasil pencarian.',
+    'enter_info' => 'Silakan isi informasi di bawah ini. Label yang ditandai dengan <span class="asterisk">*</span> adalah kolom input yang diperlukan.',
+    'update_info' => 'Silahkan memperbaharui data form dibawah ini. Form yang memiliki tanda <span class="asterisk">*</span> harus anda isi.',
+    'r_u_sure_delete' => 'Apakah Anda yakin akan menghapus data ini?',
+    'no_data_selected' => 'Tidak ada data yang dipilih',
+    'id_not_found' => 'Id tidak ditemukan!',
+    'data_not_found' => 'Data tidak ditemukan!',
+    'page_not_found' => 'Halaman tidak ditemukan!',
+    'delete_failed_have_foreign' => 'Data ":name" masih memiliki relasi data di tabel :table',
+    'select_data' => '-- Pilih :data --',
+    'unread_notification' => 'Notifikasi yang belum dibaca',
+    'mark_as_read' => 'Tandai Sudah Dibaca',
+    'no_notification' => 'Tidak Ada Notifikasi',
+    'empty_password_not_change' => 'Kosongkan kata sandi jika tidak dirubah.',
+    'process_failed' => 'Proses :action gagal! Hubungi developer untuk aksi lebih lanjut',
+    'register_data_valid' => 'Lengkapi form di bawah dengan menggunakan data Anda yang valid',
+    'party_registered' => ':Name Telah Mendaftar',
+    'no_quotation_mark_name' => "Penulisan nama tidak diperbolehkan ada tanda petik (').",
+    'email_from_google_yahoo' => 'Mohon menggunakan provider email dari google atau yahoo untuk menghindari masalah pengiriman pesan.',
+    'mail_registration' => 'Terima Kasih Anda telah melakukan registrasi di :site. Akun Anda akan kami verifikasi dalam waktu :time.',
+    'r_u_sure_activate' => 'Apakah Anda akan mengaktivasi pihak ini?',
+    'phone_holder' => '8212345678',
+    'module_not_found' => 'Module tidak ditemukan!',
+    'service_not_found' => 'Service tidak ditemukan!',
+    'error_message' => 'Terjadi kesalahan pada sistem! Hubungi developer atau cek log!',
+    'file_exists' => 'File sudah ada',
+    /* Fuad */
+    'complete_profile_first' => 'Mohon lengkapi profil terlebih dahulu!',
+    'profile_sudah_update' => 'Profile Anda sudah terisi',
+    'party_verified_success' => 'User Telah Diaktivasi',
+    'transfer_to_account' => 'Transfer ke :bank :no_rek a/n :atas_nama',
+];

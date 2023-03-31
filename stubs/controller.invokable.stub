@@ -1,0 +1,27 @@
+<?php
+/*=========================================================================================
+    App Name: Inventory Management System
+    File Name: {{ class }}
+    --------------------------------------------------------------------------------------
+    Author: R. Idham Aziz Marlin, S.Kom
+    Email: idhamaziz390@gmail.com
+==========================================================================================*/
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class {{ class }} extends Controller
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke(Request $request)
+    {
+        //
+    }
+}
